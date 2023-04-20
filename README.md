@@ -43,6 +43,8 @@ You can fork the repo and send a pull request. We care clean, understandable and
 6) NOTEs and TODOs
    - If you would like to add a comment for functions, variables etc. please use `// NOTE: `
    - If you would like to add a todo for functions, variables etc. please use `// TODO: `
+7) Installing packages
+   - Please remove `^` for packages in `package.json`
 
 ## Roadmap
 
