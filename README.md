@@ -51,7 +51,7 @@ Roadmap is a living document to track upcoming features and updates.
 | category | feature | status | version | priority |
 |----------|---------|--------|---------|----------|
 | Readme.md | installation instructure | ⌛️ | 0.1 | L |
-| Readme.md | contribution rules | ⌛️ | 0.1 | L |
+| Readme.md | contribution rules | ✅ | 0.1 | L |
 | Readme.md | mongodb shield | ⌛️ | 0.1 | L |
 | Readme.md | redis shield | ⌛️ | 0.1 | L |
 | Readme.md | redis shield | ⌛️ | 0.1 | L |
