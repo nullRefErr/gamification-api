@@ -66,3 +66,4 @@ Roadmap is a living document to track upcoming features and updates.
 | Infrastructure | grpc implementation | ⌛️ | 0.1 | L |
 | API | jwt token authorization | ⌛️ | 0.1 | H |
 | API | api key authorization | ⌛️ | 0.1 | L |
+| API | leaderboard operations | ⌛️ | 0.1 | L |
