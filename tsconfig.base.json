@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@gamification-api/helpers": ["libs/helpers/src/index.ts"]
+      "@gamification-api/config": ["libs/config/src/index.ts"],
+      "@gamification-api/helpers": ["libs/helpers/src/index.ts"],
+      "@gamification-api/modules": ["libs/modules/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
