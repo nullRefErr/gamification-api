@@ -1,0 +1,47 @@
+version: "3.6"
+services:
+  app_account:
+    container_name: app_account
+    build:
+      dockerfile: base.Dockerfile
+      target: "development"
+      args:
+        app: "account"
+    command: npm run start -- account --inspect false --skip-nx-cache=true
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - gamification-api-nw
+
+  app_leaderboard:
+    container_name: app_leaderboard
+    build:
+      dockerfile: base.Dockerfile
+      target: "development"
+      args:
+        app: "leaderboard"
+    command: npm run start -- leaderboard --inspect false --skip-nx-cache=true
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - gamification-api-nw
+  app_gateway:
+    container_name: app_gateway
+    build:
+      dockerfile: base.Dockerfile
+      target: "development"
+      args:
+        app: "gateway"
+    command: npm run start -- gateway --inspect false --skip-nx-cache=true
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - gamification-api-nw
+networks:
+  gamification-api-nw:
+volumes:
+  cache:
+    driver: local
