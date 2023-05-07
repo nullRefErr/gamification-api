@@ -13,7 +13,10 @@ services:
       - /usr/src/app/node_modules
     networks:
       - gamification-api-nw
-
+    depends_on:
+      - database
+      - cache
+      - localstack
   app_leaderboard:
     container_name: app_leaderboard
     build:
@@ -27,6 +30,10 @@ services:
       - /usr/src/app/node_modules
     networks:
       - gamification-api-nw
+    depends_on:
+      - database
+      - cache
+      - localstack
   app_gateway:
     container_name: app_gateway
     build:
@@ -35,11 +42,24 @@ services:
       args:
         app: "gateway"
     command: npm run start -- gateway --inspect false --skip-nx-cache=true
+    environment:
+      APP_PORT: 3000
+    ports:
+      - 3000:3000
     volumes:
       - ./:/usr/src/app
       - /usr/src/app/node_modules
     networks:
       - gamification-api-nw
+    depends_on:
+      - app_leaderboard
+      - app_account
+      - database
+      - cache
+      - localstack
+    links:
+      - app_account
+      - app_leaderboard
   database:
     image: mongo
     container_name: database
@@ -58,7 +78,7 @@ services:
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
       - ALLOW_EMPTY_PASSWORD=yes
       - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
-      - REDIS_PASSWORD=esnekbeyinrootredis__ytkn2022
+      - REDIS_PASSWORD=123456789
     ports:
       - '6379:6379'
     networks:
