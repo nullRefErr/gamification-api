@@ -9,16 +9,14 @@ services:
         app: "account"
     command: npm run start -- account --inspect false --skip-nx-cache=true
     volumes:
-      - ./:/usr/src/app
-      - /usr/src/app/node_modules
+      - ./:/usr/src/modules
+      - /usr/src/modules/node_modules
     networks:
       - gamification-api-nw
     depends_on:
       - database
       - cache
       - localstack
-    links:
-      - app_leaderboard
   app_leaderboard:
     container_name: app_leaderboard
     build:
@@ -28,16 +26,14 @@ services:
         app: "leaderboard"
     command: npm run start -- leaderboard --inspect false --skip-nx-cache=true
     volumes:
-      - ./:/usr/src/app
-      - /usr/src/app/node_modules
+      - ./:/usr/src/modules
+      - /usr/src/modules/node_modules
     networks:
       - gamification-api-nw
     depends_on:
       - database
       - cache
       - localstack
-    links:
-      - app_account
   app_gateway:
     container_name: app_gateway
     build:
@@ -49,8 +45,8 @@ services:
     environment:
       APP_PORT: 3000:3000
     volumes:
-      - ./:/usr/src/app
-      - /usr/src/app/node_modules
+      - ./:/usr/src/modules
+      - /usr/src/modules/node_modules
     networks:
       - gamification-api-nw
     depends_on:
@@ -80,7 +76,7 @@ services:
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
       - ALLOW_EMPTY_PASSWORD=yes
       - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
-      - REDIS_PASSWORD=esnekbeyinrootredis__ytkn2022
+      - REDIS_PASSWORD=123456789
     ports:
       - '6379:6379'
     networks:
