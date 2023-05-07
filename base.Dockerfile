@@ -2,7 +2,7 @@ FROM node:14-alpine AS development
 RUN apk --no-cache add --update --virtual .builds-deps build-base python3 py3-pip make g++
 
 WORKDIR /usr/src/app
-RUN chmod -R 777 /usr/src/modules
+RUN chmod -R 777 /usr/src/app
 
 ARG app
 
@@ -16,7 +16,7 @@ COPY apps/${app} ./apps/${app}
 RUN rm -rf ./node_modules
 RUN npm install
 RUN ls
-RUN npm run build -- ${modules} --inspect false --skip-nx-cache=true
+RUN npm run build -- ${app} --inspect false --skip-nx-cache=true
 
 FROM node:14-alpine AS production
 
