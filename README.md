@@ -68,6 +68,8 @@ Roadmap is a living document to track upcoming features and updates.
 |----------------|--------------------------|--------|---------|----------|
 | Readme.md      | contribution rules       | ✅      | 0.1     | L        |
 | Infrastructure | adding docker            | ✅️     | 0.1     | H        |
+| Infrastructure | mongodb connection       | ✅️     | 0.1     | H        |
+| Infrastructure | redis connection         | ✅️     | 0.1     | H        |
 | Readme.md      | installation instructure | ⌛️     | 0.1     | L        |
 | Readme.md      | mongodb shield           | ⌛️     | 0.1     | L        |
 | Readme.md      | redis shield             | ⌛️     | 0.1     | L        |
@@ -80,6 +82,4 @@ Roadmap is a living document to track upcoming features and updates.
 | Infrastructure | typebox models           | ⌛️     | 0.1     | H        |
 | Infrastructure | entity models            | ⌛️     | 0.1     | H        |
 | Infrastructure | logging                  | ⌛️     | 0.1     | H        |
-| Infrastructure | mongodb connection       | ⌛️     | 0.1     | H        |
-| Infrastructure | redis connection         | ⌛️     | 0.1     | H        |
 | API            | jwt token authorization  | ⌛️     | 0.1     | H        |
