@@ -2,10 +2,10 @@ import {Module} from '@nestjs/common';
 
 import {AppController} from './app.controller';
 import {AppService} from './app.service';
-import {GlobalConfigModule, GlobalMongoModule} from "@gamification-api/modules";
+import {GlobalCacheModule, GlobalConfigModule, GlobalMongoModule} from "@gamification-api/modules";
 
 @Module({
-  imports: [GlobalMongoModule, GlobalConfigModule],
+  imports: [GlobalMongoModule, GlobalConfigModule, GlobalCacheModule],
   controllers: [AppController],
   providers: [AppService],
 })

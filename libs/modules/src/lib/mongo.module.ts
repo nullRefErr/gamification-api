@@ -8,17 +8,10 @@ import {ConfigService} from "@nestjs/config";
   imports: [MongooseModule.forRootAsync({
     imports: [GlobalConfigModule],
     inject: [ConfigService],
-    useFactory: (config: ConfigService) => {
-      console.log({
-        uri: config.get<string>('database.uri'),
-        dbName: config.get<string>('database.name'),
-        nodeenv: config.get<string>('nodeEnv')
-      })
-      return {
-        uri: config.get<string>('database.uri'),
-        dbName: config.get<string>('database.name'),
-      }
-    },
+    useFactory: (config: ConfigService) => ({
+      uri: config.get<string>('database.uri'),
+      dbName: config.get<string>('database.name'),
+    }),
   })],
   exports: [MongooseModule]
 })
