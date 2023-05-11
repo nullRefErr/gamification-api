@@ -7,7 +7,7 @@ const TCredentials = Type.Object({
   username: Type.String(),
   password: Type.String(),
   passwordChangedAt: Type.Date(),
-  lastPassword: Type.Date(),
+  lastPassword: Type.String(),
 });
 
 export type Credentials = Static<typeof TCredentials>;

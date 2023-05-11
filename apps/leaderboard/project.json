@@ -14,7 +14,6 @@
         "outputPath": "dist/apps/leaderboard",
         "main": "apps/leaderboard/src/main.ts",
         "tsConfig": "apps/leaderboard/tsconfig.app.json",
-        "assets": ["apps/leaderboard/src/assets"],
         "isolatedConfig": true,
         "webpackConfig": "apps/leaderboard/webpack.config.js"
       },

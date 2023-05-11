@@ -1,4 +1,5 @@
-import {Controller, Get} from '@nestjs/common';
+import {Body, Controller, Get} from '@nestjs/common';
+import {SignUpDTO} from "@gamification-api/models";
 
 import {AppService} from './app.service';
 
@@ -8,7 +9,7 @@ export class AppController {
   }
 
   @Get()
-  getData() {
+  getData(@Body() params: SignUpDTO) {
     return this.appService.getData();
   }
 }
