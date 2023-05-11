@@ -1,6 +1,6 @@
 import {Prop, Schema, SchemaFactory} from '@nestjs/mongoose';
 import {Document} from 'mongoose';
-import {Credentials, User} from '../definitions';
+import {Credentials} from '../definitions';
 import {ExactType} from "@gamification-api/core";
 
 export type CredentialsEntityDocument = CredentialsEntity & Document;
@@ -8,19 +8,19 @@ export type CredentialsEntityDocument = CredentialsEntity & Document;
 @Schema({timestamps: true, versionKey: false})
 export class CredentialsEntity implements ExactType<CredentialsEntity, Credentials> {
   @Prop()
-  userId: Credentials['userId'];
+  userId: string;
   @Prop()
-  username: Credentials['username'];
+  username: string;
   @Prop()
-  password: Credentials['password'];
+  password: string;
   @Prop()
-  passwordChangedAt: Credentials['passwordChangedAt'];
+  passwordChangedAt: Date;
   @Prop()
-  lastPassword: Credentials['lastPassword'];
+  lastPassword: string;
 
-  _id: User['_id'];
-  createdAt: User['createdAt'];
-  updatedAt: User['updatedAt'];
+  _id: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 

@@ -8,23 +8,23 @@ export type UserEntityDocument = UserEntity & Document;
 @Schema({timestamps: true, versionKey: false})
 export class UserEntity implements ExactType<UserEntity, User> {
   @Prop()
-  email: User['email'];
+  email: string;
   @Prop()
-  name: User['name'];
+  name: string;
   @Prop()
-  surname: User['surname'];
+  surname: string;
   @Prop()
-  isActivated: User['isActivated'];
+  isActivated: boolean;
   @Prop()
-  isEULAAccepted: User['isEULAAccepted'];
+  isEULAAccepted: boolean;
   @Prop()
-  isBanned: User['isBanned'];
+  isBanned: boolean;
   @Prop()
-  refCode: User['refCode'];
+  refCode: string;
 
-  _id: User['_id'];
-  createdAt: User['createdAt'];
-  updatedAt: User['updatedAt'];
+  _id: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 
