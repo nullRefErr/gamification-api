@@ -82,4 +82,5 @@ Roadmap is a living document to track upcoming features and updates.
 | Infrastructure | logging                  | ⌛️    | 0.1     | H        |
 | Infrastructure | mongodb connection       | ⌛️    | 0.1     | H        |
 | Infrastructure | redis connection         | ⌛️    | 0.1     | H        |
+| Infrastructure | ajv validations          | ⌛️    | 0.1     | H        |
 | API            | jwt token authorization  | ⌛️    | 0.1     | H        |
