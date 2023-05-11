@@ -17,7 +17,9 @@
     "paths": {
       "@gamification-api/core": ["libs/core/src/index.ts"],
       "@gamification-api/helpers": ["libs/helpers/src/index.ts"],
-      "@gamification-api/models": ["libs/models/src/index.ts"]
+      "@gamification-api/config": ["libs/config/src/index.ts"],
+      "@gamification-api/helpers": ["libs/helpers/src/index.ts"],
+      "@gamification-api/modules": ["libs/modules/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

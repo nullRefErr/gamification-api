@@ -1,0 +1,114 @@
+version: "3.6"
+services:
+  app_account:
+    container_name: app_account
+    build:
+      dockerfile: base.Dockerfile
+      target: "development"
+      args:
+        app: "account"
+    command: npm run start -- account --inspect false --skip-nx-cache=true
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - gamification-api-nw
+    depends_on:
+      - database
+      - cache
+      - localstack
+  app_leaderboard:
+    container_name: app_leaderboard
+    build:
+      dockerfile: base.Dockerfile
+      target: "development"
+      args:
+        app: "leaderboard"
+    command: npm run start -- leaderboard --inspect false --skip-nx-cache=true
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - gamification-api-nw
+    depends_on:
+      - database
+      - cache
+      - localstack
+  app_gateway:
+    container_name: app_gateway
+    build:
+      dockerfile: base.Dockerfile
+      target: "development"
+      args:
+        app: "gateway"
+    command: npm run start -- gateway --inspect false --skip-nx-cache=true
+    environment:
+      APP_PORT: 3000
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - gamification-api-nw
+    depends_on:
+      - app_leaderboard
+      - app_account
+      - database
+      - cache
+      - localstack
+    links:
+      - app_account
+      - app_leaderboard
+  database:
+    image: mongo
+    container_name: database
+    volumes:
+      - /Users/${USER}/mongodb/database:/data/db
+    ports:
+      - 27017:27017
+    restart: unless-stopped
+    networks:
+      - gamification-api-nw
+  cache:
+    image: docker.io/bitnami/redis:7.0
+    container_name: cache
+    restart: always
+    environment:
+      # ALLOW_EMPTY_PASSWORD is recommended only for development.
+      - ALLOW_EMPTY_PASSWORD=yes
+      - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
+      - REDIS_PASSWORD=123456789
+    ports:
+      - '6379:6379'
+    networks:
+      - gamification-api-nw
+    volumes:
+      - cache:/bitnami/redis/data
+  localstack:
+    container_name: localstack
+    platform: linux/arm64
+    image: localstack/localstack
+    ports:
+      - "127.0.0.1:53:53"
+      - "127.0.0.1:53:53/udp"
+      - "127.0.0.1:443:443"
+      - "127.0.0.1:4566:4566"
+      - "127.0.0.1:4571:4571"
+    environment:
+      - SERVICES=s3
+      - DEBUG=1
+      - DATA_DIR=/tmp/localstack/data
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - AWS_AWS_ACCESS_KEY_ID=test
+      - AWS_AWS_SECRET_ACCESS_KEY=test
+    networks:
+      - gamification-api-nw
+    volumes:
+      - "./.localstack:/tmp/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+networks:
+  gamification-api-nw:
+volumes:
+  cache:
+    driver: local
