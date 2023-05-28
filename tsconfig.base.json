@@ -10,33 +10,18 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@gamification-api/core": [
-        "libs/core/src/index.ts"
-      ],
-      "@gamification-api/config": [
-        "libs/config/src/index.ts"
-      ],
-      "@gamification-api/helpers": [
-        "libs/helpers/src/index.ts"
-      ],
-      "@gamification-api/modules": [
-        "libs/modules/src/index.ts"
-      ],
-      "@gamification-api/models": [
-        "libs/models/src/index.ts"
-      ]
+      "@gamification-api/config": ["libs/config/src/index.ts"],
+      "@gamification-api/core": ["libs/core/src/index.ts"],
+      "@gamification-api/helpers": ["libs/helpers/src/index.ts"],
+      "@gamification-api/models": ["libs/models/src/index.ts"],
+      "@gamification-api/modules": ["libs/modules/src/index.ts"],
+      "@gamification-api/utility": ["libs/utility/src/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }
