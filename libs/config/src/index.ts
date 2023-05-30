@@ -6,6 +6,6 @@ export default () => ({
   },
   cache: {
     url: process.env.CACHE_URL,
-    password: process.env.CACHE_PASSWORD
-  }
+    password: process.env.CACHE_PASSWORD,
+  },
 });

@@ -1,1 +1,1 @@
-export * from './base-request.dto'
+export * from './base-request.dto';

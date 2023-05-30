@@ -1,7 +1,7 @@
-import {Global, Module} from '@nestjs/common';
-import {RedisModule} from '@nestjs-modules/ioredis';
-import {GlobalConfigModule} from "./config.module";
-import {ConfigService} from "@nestjs/config";
+import { Global, Module } from '@nestjs/common';
+import { RedisModule } from '@nestjs-modules/ioredis';
+import { GlobalConfigModule } from './config.module';
+import { ConfigService } from '@nestjs/config';
 
 @Global()
 @Module({
@@ -17,7 +17,6 @@ import {ConfigService} from "@nestjs/config";
       }),
     }),
   ],
-  exports: [RedisModule]
+  exports: [RedisModule],
 })
-export class GlobalCacheModule {
-}
+export class GlobalCacheModule {}

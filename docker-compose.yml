@@ -1,12 +1,12 @@
-version: "3.6"
+version: '3.6'
 services:
   app_account:
     container_name: app_account
     build:
       dockerfile: base.Dockerfile
-      target: "development"
+      target: 'development'
       args:
-        app: "account"
+        app: 'account'
     command: npm run start -- account --inspect false --skip-nx-cache=true
     environment:
       - DATABASE_HOST=mongodb://database:27017
@@ -26,9 +26,9 @@ services:
     container_name: app_leaderboard
     build:
       dockerfile: base.Dockerfile
-      target: "development"
+      target: 'development'
       args:
-        app: "leaderboard"
+        app: 'leaderboard'
     command: npm run start -- leaderboard --inspect false --skip-nx-cache=true
     environment:
       - DATABASE_HOST=mongodb://database:27017
@@ -48,9 +48,9 @@ services:
     container_name: app_gateway
     build:
       dockerfile: base.Dockerfile
-      target: "development"
+      target: 'development'
       args:
-        app: "gateway"
+        app: 'gateway'
     command: npm run start -- gateway --inspect false --skip-nx-cache=true
     environment:
       APP_PORT: 3000
@@ -100,11 +100,11 @@ services:
     platform: linux/arm64
     image: localstack/localstack
     ports:
-      - "127.0.0.1:53:53"
-      - "127.0.0.1:53:53/udp"
-      - "127.0.0.1:443:443"
-      - "127.0.0.1:4566:4566"
-      - "127.0.0.1:4571:4571"
+      - '127.0.0.1:53:53'
+      - '127.0.0.1:53:53/udp'
+      - '127.0.0.1:443:443'
+      - '127.0.0.1:4566:4566'
+      - '127.0.0.1:4571:4571'
     environment:
       - SERVICES=s3
       - DEBUG=1
@@ -115,8 +115,8 @@ services:
     networks:
       - gamification-api-nw
     volumes:
-      - "./.localstack:/tmp/localstack"
-      - "/var/run/docker.sock:/var/run/docker.sock"
+      - './.localstack:/tmp/localstack'
+      - '/var/run/docker.sock:/var/run/docker.sock'
 networks:
   gamification-api-nw:
 volumes:

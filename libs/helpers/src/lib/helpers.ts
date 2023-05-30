@@ -1,3 +1,3 @@
 export function helpers(): string {
-  return "helpers";
+  return 'helpers';
 }
