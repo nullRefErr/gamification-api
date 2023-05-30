@@ -18,20 +18,32 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@gamification-api/config": [
+        "libs/config/src/index.ts"
+      ],
       "@gamification-api/core": [
         "libs/core/src/index.ts"
       ],
-      "@gamification-api/config": [
-        "libs/config/src/index.ts"
+      "@gamification-api/decorators": [
+        "libs/decorators/src/index.ts"
       ],
       "@gamification-api/helpers": [
         "libs/helpers/src/index.ts"
       ],
-      "@gamification-api/modules": [
-        "libs/modules/src/index.ts"
+      "@gamification-api/interceptors": [
+        "libs/interceptors/src/index.ts"
+      ],
+      "@gamification-api/middlewares": [
+        "libs/middlewares/src/index.ts"
       ],
       "@gamification-api/models": [
         "libs/models/src/index.ts"
+      ],
+      "@gamification-api/modules": [
+        "libs/modules/src/index.ts"
+      ],
+      "@gamification-api/utility": [
+        "libs/utility/src/index.ts"
       ]
     }
   },

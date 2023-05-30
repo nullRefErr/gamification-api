@@ -1,12 +1,14 @@
-import {Prop, Schema, SchemaFactory} from '@nestjs/mongoose';
-import {Document} from 'mongoose';
-import {Credentials} from '../definitions';
-import {ExactType} from "@gamification-api/core";
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Document } from 'mongoose';
+import { Credentials } from '../definitions';
+import { ExactType } from '@gamification-api/core';
 
 export type CredentialsEntityDocument = CredentialsEntity & Document;
 
-@Schema({timestamps: true, versionKey: false})
-export class CredentialsEntity implements ExactType<CredentialsEntity, Credentials> {
+@Schema({ timestamps: true, versionKey: false })
+export class CredentialsEntity
+  implements ExactType<CredentialsEntity, Credentials>
+{
   @Prop()
   userId: string;
   @Prop()
@@ -23,5 +25,5 @@ export class CredentialsEntity implements ExactType<CredentialsEntity, Credentia
   updatedAt: Date;
 }
 
-
-export const CredentialsEntitySchema = SchemaFactory.createForClass(CredentialsEntity);
+export const CredentialsEntitySchema =
+  SchemaFactory.createForClass(CredentialsEntity);

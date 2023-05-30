@@ -1,5 +1,5 @@
-import {Static, Type} from '@sinclair/typebox';
-import {MongoModel} from "./common";
+import { Static, Type } from '@sinclair/typebox';
+import { MongoModel } from './common';
 
 const TCredentials = Type.Object({
   ...MongoModel.properties,
