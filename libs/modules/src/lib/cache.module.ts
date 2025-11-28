@@ -10,8 +10,9 @@ import { ConfigService } from '@nestjs/config';
       imports: [GlobalConfigModule],
       inject: [ConfigService],
       useFactory: (config: ConfigService) => ({
-        config: {
-          url: config.get<string>('cache.url'),
+        type: 'single',
+        url: config.get<string>('cache.url'),
+        options: {
           password: config.get<string>('cache.password'),
         },
       }),

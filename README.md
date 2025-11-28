@@ -9,7 +9,7 @@ Mobile, PaaS.
 <center >
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![License](https://img.shields.io/badge/nodeJs->=14.21-brightgreen.svg)](https://nodejs.org)
+[![License](https://img.shields.io/badge/nodeJs->=22.0.0-brightgreen.svg)](https://nodejs.org)
 
 </center>
 

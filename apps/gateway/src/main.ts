@@ -8,8 +8,7 @@ import {NestFactory} from '@nestjs/core';
 
 import {AppModule} from './app/app.module';
 import {LoggerInterceptor} from '@gamification-api/interceptors';
-import {clientMetaMiddleware, reqMetaMiddleware} from '@gamification-api/middlewares';
-import {methodFilterMiddleware} from "../../../libs/middlewares/src/method-filter.middleware";
+import {clientMetaMiddleware, reqMetaMiddleware, methodFilterMiddleware} from '@gamification-api/middlewares';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
