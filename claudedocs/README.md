@@ -191,6 +191,59 @@ This comprehensive documentation suite covers the complete architecture, design,
 
 ---
 
+### 8. **Gateway Service Spec** 🌐
+**File**: [`services/GATEWAY_SERVICE_SPEC.md`](./services/GATEWAY_SERVICE_SPEC.md) (1,800+ lines)
+
+**What's Inside**:
+- Complete API Gateway architecture for routing to all microservices
+- Service registry with circuit breaker patterns
+- JWT and API Key authentication strategies
+- Redis-based distributed rate limiting
+- Intelligent caching with configurable TTL
+- Comprehensive error handling and transformation
+- Health checks and metrics collection
+- Kubernetes deployment with auto-scaling
+
+**Read This First If**: You're setting up the API Gateway or need to understand request routing.
+
+**Key Highlights**:
+- Routes to all 16 microservices with dynamic service discovery
+- Multi-strategy authentication (JWT + API keys)
+- Circuit breaker protection against cascading failures
+- Real-time metrics forwarding to Analytics Service
+- Production-ready with 99.9% uptime target
+- Complete NestJS implementation examples
+
+---
+
+### 9. **Analytics Service Architecture** 📊
+**File**: [`services/ANALYTICS_SERVICE_ARCHITECTURE.md`](./services/ANALYTICS_SERVICE_ARCHITECTURE.md) (2,000+ lines)
+
+**What's Inside**:
+- Complete data pipeline: Ingestion → Kafka → Storage → Query
+- Gateway integration for request metrics forwarding
+- Real-time stream processing with Kafka consumers
+- 3-tier storage: Redis (hot) + MongoDB (warm) + ClickHouse (cold)
+- Optimized ClickHouse queries with materialized views
+- Caching strategy with smart TTLs
+- Scalability architecture with horizontal scaling
+- Data lifecycle management (hot/warm/cold/archive)
+- Kubernetes deployment with HPA
+
+**Read This First If**: You're implementing analytics, dashboards, or insights features.
+
+**Key Highlights**:
+- Processes 10K+ events/second with batching
+- Sub-second query performance with ClickHouse
+- Gateway metrics automatically forwarded to Analytics
+- Real-time dashboards with Redis caching
+- Complete Kafka stream processing pipeline
+- Production monitoring with Prometheus/Grafana
+
+**Complements**: [`services/ANALYTICS_INSIGHTS_SERVICE_SPEC.md`](./services/ANALYTICS_INSIGHTS_SERVICE_SPEC.md) (1,086 lines) - API endpoints and basic implementation
+
+---
+
 ## 🚀 Quick Start Guide
 
 ### For Project Managers
@@ -290,14 +343,16 @@ See: [`COMPLETE_SERVICES_SUMMARY.md`](./COMPLETE_SERVICES_SUMMARY.md)
 
 | Metric | Count |
 |--------|-------|
-| Total Documents | 7 |
-| Total Lines | 16,000+ |
-| Microservices Specified | 10 |
-| API Endpoints | 200+ |
-| Database Schemas | 40+ |
-| Code Examples | 10,000+ lines |
+| Total Documents | 21 |
+| Total Lines | 42,000+ |
+| Microservices Specified | 16 (all services) |
+| API Endpoints | 250+ |
+| Database Schemas | 50+ |
+| Code Examples | 15,000+ lines |
 | Implementation Phases | 4 |
 | Estimated Timeline | 34 weeks |
+| **New: Gateway Spec** | ✅ 1,800+ lines |
+| **New: Analytics Architecture** | ✅ 2,000+ lines |
 
 ---
 
