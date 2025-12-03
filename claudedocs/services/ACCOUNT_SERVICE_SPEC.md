@@ -16,6 +16,8 @@ The Account Service is the foundational authentication and user management servi
 - **Session Management**: Multi-device sessions, session revocation
 - **Security**: Rate limiting, suspicious activity detection, account lockout
 - **Multi-tenancy**: Client isolation at account level
+- **Subscription Management**: Tier-based access control, usage limits, billing cycles
+- **Usage Tracking**: Game creation limits, API rate limits per tier
 
 ### Account vs Player Service
 
@@ -23,9 +25,26 @@ The Account Service is the foundational authentication and user management servi
 |--------|----------------|----------------|
 | **Scope** | Platform-wide authentication | Game-specific player data |
 | **Authentication** | Login, JWT, OAuth, 2FA | Session tokens from account auth |
-| **Data** | Email, password, security | Avatar, stats, inventory, progression |
+| **Data** | Email, password, security, subscription | Avatar, stats, inventory, progression |
 | **Lifecycle** | Registration to deletion | Game onboarding per client |
 | **Relationship** | 1 account → many players | 1 player per client/game |
+
+### Subscription Tiers
+
+| Tier | Games Allowed | Services Access | Rate Limit | Price |
+|------|--------------|----------------|------------|-------|
+| **Free** | 1 game | Leaderboard, Achievement, Player, Quest | 1,000 req/day | $0/month |
+| **Pro** | 10 games | All services | 100,000 req/day | $49/month |
+| **Enterprise** | Unlimited | All services + Priority Support | Custom | Contact Sales |
+
+#### Free Tier Limitations
+- **Game Creation**: Maximum 1 game/client allowed
+- **Services**: Access to core services (Leaderboard, Achievement, Player, Quest)
+- **Rate Limiting**: 1,000 API requests per day
+- **Data Retention**: 30 days for analytics data
+- **Support**: Community support only
+- **Webhooks**: 5 webhooks maximum
+- **Players**: Up to 1,000 active players per month
 
 ### Technology Stack
 
@@ -900,6 +919,204 @@ Authorization: Bearer {adminToken}
 
 ---
 
+### Subscription Management Endpoints
+
+#### 31. Get Subscription Details
+```http
+GET /api/v1/accounts/{accountId}/subscription
+Authorization: Bearer {token}
+```
+
+**Response** (200 OK):
+```json
+{
+  "subscription": {
+    "tier": "free",
+    "status": "active",
+    "currentPeriodStart": "2025-12-01T00:00:00Z",
+    "currentPeriodEnd": null,
+    "limits": {
+      "gamesAllowed": 1,
+      "apiRequestsPerDay": 1000,
+      "webhooksAllowed": 5,
+      "activePlayersPerMonth": 1000
+    },
+    "usage": {
+      "gamesCreated": 0,
+      "apiRequestsToday": 143,
+      "webhooksCreated": 2,
+      "activePlayers": 0
+    },
+    "servicesAccess": ["leaderboard", "achievement", "player", "quest"]
+  }
+}
+```
+
+#### 32. Upgrade Subscription
+```http
+POST /api/v1/accounts/{accountId}/subscription/upgrade
+Authorization: Bearer {token}
+Content-Type: application/json
+
+{
+  "targetTier": "pro",
+  "billingCycle": "monthly",
+  "paymentMethodId": "pm_1234567890"
+}
+```
+
+**Response** (200 OK):
+```json
+{
+  "subscription": {
+    "tier": "pro",
+    "status": "active",
+    "currentPeriodStart": "2025-12-04T00:30:00Z",
+    "currentPeriodEnd": "2026-01-04T00:30:00Z",
+    "stripeSubscriptionId": "sub_1234567890",
+    "limits": {
+      "gamesAllowed": 10,
+      "apiRequestsPerDay": 100000,
+      "webhooksAllowed": 50,
+      "activePlayersPerMonth": 100000
+    }
+  },
+  "invoice": {
+    "id": "inv_1234567890",
+    "amount": 4900,
+    "currency": "usd",
+    "status": "paid"
+  },
+  "message": "Subscription upgraded to Pro tier"
+}
+```
+
+#### 33. Cancel Subscription
+```http
+POST /api/v1/accounts/{accountId}/subscription/cancel
+Authorization: Bearer {token}
+Content-Type: application/json
+
+{
+  "reason": "Too expensive",
+  "cancelAtPeriodEnd": true
+}
+```
+
+**Response** (200 OK):
+```json
+{
+  "subscription": {
+    "tier": "pro",
+    "status": "active",
+    "cancelAtPeriodEnd": true,
+    "currentPeriodEnd": "2026-01-04T00:30:00Z"
+  },
+  "message": "Subscription will cancel at the end of billing period"
+}
+```
+
+#### 34. Check Usage Limits
+```http
+GET /api/v1/accounts/{accountId}/subscription/usage
+Authorization: Bearer {token}
+```
+
+**Response** (200 OK):
+```json
+{
+  "tier": "free",
+  "usage": {
+    "gamesCreated": 1,
+    "apiRequestsToday": 567,
+    "webhooksCreated": 3,
+    "activePlayers": 245
+  },
+  "limits": {
+    "gamesAllowed": 1,
+    "apiRequestsPerDay": 1000,
+    "webhooksAllowed": 5,
+    "activePlayersPerMonth": 1000
+  },
+  "percentage": {
+    "games": 100,
+    "apiRequests": 56.7,
+    "webhooks": 60,
+    "players": 24.5
+  },
+  "warnings": [
+    {
+      "type": "game_limit",
+      "message": "You have reached the maximum number of games for your tier",
+      "action": "Upgrade to Pro to create more games"
+    }
+  ]
+}
+```
+
+#### 35. Get Subscription Plans
+```http
+GET /api/v1/subscription/plans
+```
+
+**Response** (200 OK):
+```json
+{
+  "plans": [
+    {
+      "tier": "free",
+      "name": "Free",
+      "price": 0,
+      "currency": "usd",
+      "billingCycle": null,
+      "features": {
+        "gamesAllowed": 1,
+        "apiRequestsPerDay": 1000,
+        "servicesAccess": ["leaderboard", "achievement", "player", "quest"],
+        "webhooksAllowed": 5,
+        "activePlayersPerMonth": 1000,
+        "dataRetention": "30 days",
+        "support": "Community"
+      }
+    },
+    {
+      "tier": "pro",
+      "name": "Pro",
+      "price": 4900,
+      "currency": "usd",
+      "billingCycle": "monthly",
+      "features": {
+        "gamesAllowed": 10,
+        "apiRequestsPerDay": 100000,
+        "servicesAccess": ["all"],
+        "webhooksAllowed": 50,
+        "activePlayersPerMonth": 100000,
+        "dataRetention": "365 days",
+        "support": "Email"
+      }
+    },
+    {
+      "tier": "enterprise",
+      "name": "Enterprise",
+      "price": null,
+      "currency": "usd",
+      "billingCycle": "custom",
+      "features": {
+        "gamesAllowed": "unlimited",
+        "apiRequestsPerDay": "unlimited",
+        "servicesAccess": ["all"],
+        "webhooksAllowed": "unlimited",
+        "activePlayersPerMonth": "unlimited",
+        "dataRetention": "custom",
+        "support": "Priority 24/7"
+      }
+    }
+  ]
+}
+```
+
+---
+
 ## Database Design
 
 ### MongoDB Collections
@@ -968,6 +1185,25 @@ export class Account extends Document {
       push: boolean;
       sms: boolean;
     };
+  };
+
+  @Prop({ type: Object, default: { tier: 'free' } })
+  subscription: {
+    tier: string; // free, pro, enterprise
+    status: string; // active, cancelled, expired, trial
+    currentPeriodStart?: Date;
+    currentPeriodEnd?: Date;
+    cancelAtPeriodEnd?: boolean;
+    trialEnd?: Date;
+    stripeCustomerId?: string;
+    stripeSubscriptionId?: string;
+  };
+
+  @Prop({ type: Object, default: {} })
+  usage: {
+    gamesCreated?: number;
+    apiRequestsToday?: number;
+    lastResetAt?: Date;
   };
 
   @Prop({ default: 'active', enum: ['active', 'suspended', 'pending_deletion', 'deleted'] })
