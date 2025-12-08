@@ -1,0 +1,55 @@
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 6.44 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/main.ts[39m[22m [1m[32m[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m
+[1m[31m      TS5095: Option 'bundler' can only be used when 'module' is set to 'preserve' or to 'es2015' or later.[39m[22m
+
+[1m[31mERROR[39m[22m in [1m/Users/eren/Desktop/Project/gamification-api/apps/account/tsconfig.app.json[39m[22m
+[1m./src/main.ts[39m[22m [1m[32m/Users/eren/Desktop/Project/gamification-api/apps/account/tsconfig.app.json[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m
+[1m[31m      TS5095: Option 'bundler' can only be used when 'module' is set to 'preserve' or to 'es2015' or later.[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/modules/app.controller.ts[39m[22m [1m[32m[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m
+[1m[31m      TS5095: Option 'bundler' can only be used when 'module' is set to 'preserve' or to 'es2015' or later.[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/modules/app.module.ts[39m[22m [1m[32m[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m
+[1m[31m      TS5095: Option 'bundler' can only be used when 'module' is set to 'preserve' or to 'es2015' or later.[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/modules/app.service.ts[39m[22m [1m[32m[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m
+[1m[31m      TS5095: Option 'bundler' can only be used when 'module' is set to 'preserve' or to 'es2015' or later.[39m[22m
+
+[1m[31mERROR[39m[22m in [1m../../libs/config/src/index.ts[39m[22m [1m[32m[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m
+[1m[31m      TS5095: Option 'bundler' can only be used when 'module' is set to 'preserve' or to 'es2015' or later.[39m[22m
+
+[1m[31mERROR[39m[22m in [1m../../libs/modules/src/index.ts[39m[22m [1m[32m[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m
+[1m[31m      TS5095: Option 'bundler' can only be used when 'module' is set to 'preserve' or to 'es2015' or later.[39m[22m
+
+[1m[31mERROR[39m[22m in [1m../../libs/modules/src/lib/cache.module.ts[39m[22m [1m[32m[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m
+[1m[31m      TS5095: Option 'bundler' can only be used when 'module' is set to 'preserve' or to 'es2015' or later.[39m[22m
+
+[1m[31mERROR[39m[22m in [1m../../libs/modules/src/lib/config.module.ts[39m[22m [1m[32m[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m
+[1m[31m      TS5095: Option 'bundler' can only be used when 'module' is set to 'preserve' or to 'es2015' or later.[39m[22m
+
+[1m[31mERROR[39m[22m in [1m../../libs/modules/src/lib/mongo.module.ts[39m[22m [1m[32m[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m
+[1m[31m      TS5095: Option 'bundler' can only be used when 'module' is set to 'preserve' or to 'es2015' or later.[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./libs/modules/src/lib/cache.module.ts:[32m[1m12:7[22m[39m[1m[39m[22m
+[90mTS2322: [39mType '(config: ConfigService) => { config: { url: string; password: string; }; }' is not assignable to type '(...args: any[]) => RedisModuleOptions | Promise<RedisModuleOptions>'.
+  Type '{ config: { url: string; password: string; }; }' is not assignable to type 'RedisModuleOptions | Promise<RedisModuleOptions>'.
+  [0m [90m 10 |[39m       imports[33m:[39m [[33mGlobalConfigModule[39m][33m,[39m
+   [90m 11 |[39m       inject[33m:[39m [[33mConfigService[39m][33m,[39m
+  [31m[1m>[22m[39m[90m 12 |[39m       useFactory[33m:[39m (config[33m:[39m [33mConfigService[39m) [33m=>[39m ({
+   [90m    |[39m       [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 13 |[39m         config[33m:[39m {
+   [90m 14 |[39m           url[33m:[39m config[33m.[39m[36mget[39m[33m<[39m[33mstring[39m[33m>[39m([32m'cache.url'[39m)[33m,[39m
+   [90m 15 |[39m           password[33m:[39m config[33m.[39m[36mget[39m[33m<[39m[33mstring[39m[33m>[39m([32m'cache.password'[39m)[33m,[39m[0m
+
+webpack compiled with [1m[31m11 errors[39m[22m (5247c0f277cb485f)

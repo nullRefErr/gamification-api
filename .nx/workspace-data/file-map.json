@@ -1,0 +1,745 @@
+{
+  "version": "6.0",
+  "nxVersion": "22.1.3",
+  "pathMappings": {
+    "@gamification-api/config": [
+      "libs/config/src/index.ts"
+    ],
+    "@gamification-api/core": [
+      "libs/core/src/index.ts"
+    ],
+    "@gamification-api/decorators": [
+      "libs/decorators/src/index.ts"
+    ],
+    "@gamification-api/helpers": [
+      "libs/helpers/src/index.ts"
+    ],
+    "@gamification-api/interceptors": [
+      "libs/interceptors/src/index.ts"
+    ],
+    "@gamification-api/middlewares": [
+      "libs/middlewares/src/index.ts"
+    ],
+    "@gamification-api/models": [
+      "libs/models/src/index.ts"
+    ],
+    "@gamification-api/modules": [
+      "libs/modules/src/index.ts"
+    ],
+    "@gamification-api/utility": [
+      "libs/utility/src/index.ts"
+    ]
+  },
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": "nx.json",
+        "hash": "544693613031146338"
+      },
+      {
+        "file": "jest.preset.js",
+        "hash": "2772139696069860212"
+      },
+      {
+        "file": "claudedocs/PROJECT_INDEX.md",
+        "hash": "3794820172636923125"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "879493162772516134"
+      },
+      {
+        "file": "claudedocs/DEVELOPMENT_GUIDE.md",
+        "hash": "13262532226984368378"
+      },
+      {
+        "file": "README.md",
+        "hash": "17606815023943516918"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "8865097869854018350"
+      },
+      {
+        "file": "claudedocs/NODE_22_MIGRATION_GUIDE.md",
+        "hash": "15518439415912541091"
+      },
+      {
+        "file": "claudedocs/MIGRATION_WORKFLOW.md",
+        "hash": "16061609702037329082"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "235626400633494639"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "14143506120636620919"
+      },
+      {
+        "file": "jest.config.ts",
+        "hash": "2950215254536237782"
+      },
+      {
+        "file": "apps/.gitkeep",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": ".eslintignore",
+        "hash": "7663861978715868291"
+      },
+      {
+        "file": "LICENSE.md",
+        "hash": "4872025820310500420"
+      },
+      {
+        "file": ".editorconfig",
+        "hash": "5443105041930014821"
+      },
+      {
+        "file": "claudedocs/API_PATTERNS.md",
+        "hash": "11574574000467919975"
+      },
+      {
+        "file": "docker-compose.yml",
+        "hash": "12363741392936432583"
+      },
+      {
+        "file": "libs/.gitkeep",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": "package.json",
+        "hash": "2390277745152480900"
+      },
+      {
+        "file": ".eslintrc.json",
+        "hash": "12007795942345615226"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "11608181557323256120"
+      },
+      {
+        "file": "base.Dockerfile",
+        "hash": "4149432230077745274"
+      }
+    ],
+    "projectFileMap": {
+      "helpers": [
+        {
+          "file": "libs/helpers/.babelrc",
+          "hash": "14637968239574891430"
+        },
+        {
+          "file": "libs/helpers/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/helpers/README.md",
+          "hash": "16429193114603236340"
+        },
+        {
+          "file": "libs/helpers/jest.config.ts",
+          "hash": "16234737688298474393"
+        },
+        {
+          "file": "libs/helpers/package.json",
+          "hash": "7968658504972014278"
+        },
+        {
+          "file": "libs/helpers/project.json",
+          "hash": "6966553452917380954"
+        },
+        {
+          "file": "libs/helpers/src/index.ts",
+          "hash": "9504518548638489553"
+        },
+        {
+          "file": "libs/helpers/src/lib/helpers.ts",
+          "hash": "18085812570811654700"
+        },
+        {
+          "file": "libs/helpers/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/helpers/tsconfig.lib.json",
+          "hash": "8188472110264778699"
+        },
+        {
+          "file": "libs/helpers/tsconfig.spec.json",
+          "hash": "6514620907549802163"
+        }
+      ],
+      "leaderboard": [
+        {
+          "file": "apps/leaderboard/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "apps/leaderboard/jest.config.ts",
+          "hash": "6289813198696872317"
+        },
+        {
+          "file": "apps/leaderboard/project.json",
+          "hash": "15948582560982089165"
+        },
+        {
+          "file": "apps/leaderboard/src/app/app.controller.spec.ts",
+          "hash": "9499997688052526633"
+        },
+        {
+          "file": "apps/leaderboard/src/app/app.controller.ts",
+          "hash": "9005150069945785676"
+        },
+        {
+          "file": "apps/leaderboard/src/app/app.module.ts",
+          "hash": "3163250445227373966"
+        },
+        {
+          "file": "apps/leaderboard/src/app/app.service.spec.ts",
+          "hash": "8587461140686713758"
+        },
+        {
+          "file": "apps/leaderboard/src/app/app.service.ts",
+          "hash": "9967902337593410053"
+        },
+        {
+          "file": "apps/leaderboard/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/leaderboard/src/main.ts",
+          "hash": "4777170814186984980"
+        },
+        {
+          "file": "apps/leaderboard/tsconfig.app.json",
+          "hash": "18146536384686769023"
+        },
+        {
+          "file": "apps/leaderboard/tsconfig.json",
+          "hash": "3490524966360018312"
+        },
+        {
+          "file": "apps/leaderboard/tsconfig.spec.json",
+          "hash": "11550347367511341917"
+        },
+        {
+          "file": "apps/leaderboard/webpack.config.js",
+          "hash": "11824673284397985794"
+        }
+      ],
+      "utility": [
+        {
+          "file": "libs/utility/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/utility/README.md",
+          "hash": "13143019552354929940"
+        },
+        {
+          "file": "libs/utility/jest.config.ts",
+          "hash": "3587007771752081311"
+        },
+        {
+          "file": "libs/utility/package.json",
+          "hash": "16629648737625751653"
+        },
+        {
+          "file": "libs/utility/project.json",
+          "hash": "15299374706450035343"
+        },
+        {
+          "file": "libs/utility/src/index.ts",
+          "hash": "16987308546408348185"
+        },
+        {
+          "file": "libs/utility/src/lib/index.ts",
+          "hash": "4800180650171433774"
+        },
+        {
+          "file": "libs/utility/src/lib/logger.service.ts",
+          "hash": "2823186721962249804"
+        },
+        {
+          "file": "libs/utility/tsconfig.json",
+          "hash": "3762019864980023101"
+        },
+        {
+          "file": "libs/utility/tsconfig.lib.json",
+          "hash": "3632393694954060084"
+        },
+        {
+          "file": "libs/utility/tsconfig.spec.json",
+          "hash": "11550347367511341917"
+        }
+      ],
+      "interceptors": [
+        {
+          "file": "libs/interceptors/.babelrc",
+          "hash": "14637968239574891430"
+        },
+        {
+          "file": "libs/interceptors/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/interceptors/README.md",
+          "hash": "15553234874808093863"
+        },
+        {
+          "file": "libs/interceptors/jest.config.ts",
+          "hash": "9819865848544116959"
+        },
+        {
+          "file": "libs/interceptors/package.json",
+          "hash": "1922383045454947350"
+        },
+        {
+          "file": "libs/interceptors/project.json",
+          "hash": "6427835470562783958"
+        },
+        {
+          "file": "libs/interceptors/src/index.ts",
+          "hash": "14428353282588746736"
+        },
+        {
+          "file": "libs/interceptors/src/lib/index.ts",
+          "hash": "4116318244663245537"
+        },
+        {
+          "file": "libs/interceptors/src/lib/logger.interceptor.ts",
+          "hash": "4364842453112152851"
+        },
+        {
+          "file": "libs/interceptors/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/interceptors/tsconfig.lib.json",
+          "hash": "8188472110264778699"
+        },
+        {
+          "file": "libs/interceptors/tsconfig.spec.json",
+          "hash": "6514620907549802163"
+        }
+      ],
+      "gateway": [
+        {
+          "file": "apps/gateway/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "apps/gateway/jest.config.ts",
+          "hash": "18363523736032177269"
+        },
+        {
+          "file": "apps/gateway/project.json",
+          "hash": "12878534736899868395"
+        },
+        {
+          "file": "apps/gateway/src/app/app.controller.ts",
+          "hash": "4180469850803584994"
+        },
+        {
+          "file": "apps/gateway/src/app/app.module.ts",
+          "hash": "3163250445227373966"
+        },
+        {
+          "file": "apps/gateway/src/app/app.service.ts",
+          "hash": "9967902337593410053"
+        },
+        {
+          "file": "apps/gateway/src/main.ts",
+          "hash": "16593688950139363178"
+        },
+        {
+          "file": "apps/gateway/tsconfig.app.json",
+          "hash": "18146536384686769023"
+        },
+        {
+          "file": "apps/gateway/tsconfig.json",
+          "hash": "3490524966360018312"
+        },
+        {
+          "file": "apps/gateway/tsconfig.spec.json",
+          "hash": "11550347367511341917"
+        },
+        {
+          "file": "apps/gateway/webpack.config.js",
+          "hash": "11824673284397985794"
+        }
+      ],
+      "middlewares": [
+        {
+          "file": "libs/middlewares/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/middlewares/README.md",
+          "hash": "16037953689882442637"
+        },
+        {
+          "file": "libs/middlewares/jest.config.ts",
+          "hash": "14757725535423045142"
+        },
+        {
+          "file": "libs/middlewares/package.json",
+          "hash": "10593221468394165200"
+        },
+        {
+          "file": "libs/middlewares/project.json",
+          "hash": "6719902156181929750"
+        },
+        {
+          "file": "libs/middlewares/src/client-meta.middleware.ts",
+          "hash": "4783766228614870909"
+        },
+        {
+          "file": "libs/middlewares/src/index.ts",
+          "hash": "17259956413165408953"
+        },
+        {
+          "file": "libs/middlewares/src/method-filter.middleware.ts",
+          "hash": "9644475915403282266"
+        },
+        {
+          "file": "libs/middlewares/src/req-meta.middleware.ts",
+          "hash": "5421689917152822459"
+        },
+        {
+          "file": "libs/middlewares/tsconfig.json",
+          "hash": "5840880287502376438"
+        },
+        {
+          "file": "libs/middlewares/tsconfig.lib.json",
+          "hash": "3632393694954060084"
+        },
+        {
+          "file": "libs/middlewares/tsconfig.spec.json",
+          "hash": "11550347367511341917"
+        }
+      ],
+      "modules": [
+        {
+          "file": "libs/modules/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/modules/README.md",
+          "hash": "6898958252812592876"
+        },
+        {
+          "file": "libs/modules/jest.config.ts",
+          "hash": "18059699313164064041"
+        },
+        {
+          "file": "libs/modules/project.json",
+          "hash": "17182188278175350158"
+        },
+        {
+          "file": "libs/modules/src/index.ts",
+          "hash": "5739112124134601537"
+        },
+        {
+          "file": "libs/modules/src/lib/cache.module.ts",
+          "hash": "17957232342539295096"
+        },
+        {
+          "file": "libs/modules/src/lib/config.module.ts",
+          "hash": "464769667085576092"
+        },
+        {
+          "file": "libs/modules/src/lib/mongo.module.ts",
+          "hash": "10929517206823616799"
+        },
+        {
+          "file": "libs/modules/tsconfig.json",
+          "hash": "2840670722752396445"
+        },
+        {
+          "file": "libs/modules/tsconfig.lib.json",
+          "hash": "16302846368506098775"
+        },
+        {
+          "file": "libs/modules/tsconfig.spec.json",
+          "hash": "11550347367511341917"
+        }
+      ],
+      "models": [
+        {
+          "file": "libs/models/.babelrc",
+          "hash": "14637968239574891430"
+        },
+        {
+          "file": "libs/models/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/models/README.md",
+          "hash": "17357923109984440218"
+        },
+        {
+          "file": "libs/models/jest.config.ts",
+          "hash": "8927524190956166357"
+        },
+        {
+          "file": "libs/models/package.json",
+          "hash": "14591523078776154807"
+        },
+        {
+          "file": "libs/models/project.json",
+          "hash": "13801514435600686252"
+        },
+        {
+          "file": "libs/models/src/definitions/common.ts",
+          "hash": "752864595532838427"
+        },
+        {
+          "file": "libs/models/src/definitions/credentials.ts",
+          "hash": "1682785315796565386"
+        },
+        {
+          "file": "libs/models/src/definitions/index.ts",
+          "hash": "14261408684968499218"
+        },
+        {
+          "file": "libs/models/src/definitions/user.ts",
+          "hash": "11496821882102328670"
+        },
+        {
+          "file": "libs/models/src/entities/credentials.ts",
+          "hash": "12927106840408413109"
+        },
+        {
+          "file": "libs/models/src/entities/index.ts",
+          "hash": "14261408684968499218"
+        },
+        {
+          "file": "libs/models/src/entities/user.ts",
+          "hash": "14824174887132912902"
+        },
+        {
+          "file": "libs/models/src/index.ts",
+          "hash": "523695422119077372"
+        },
+        {
+          "file": "libs/models/src/request/index.ts",
+          "hash": "12469362988315868511"
+        },
+        {
+          "file": "libs/models/src/request/signUpDTO.ts",
+          "hash": "11913425380722200711"
+        },
+        {
+          "file": "libs/models/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/models/tsconfig.lib.json",
+          "hash": "8188472110264778699"
+        },
+        {
+          "file": "libs/models/tsconfig.spec.json",
+          "hash": "6514620907549802163"
+        }
+      ],
+      "account": [
+        {
+          "file": "apps/account/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "apps/account/jest.config.ts",
+          "hash": "7787900875380347207"
+        },
+        {
+          "file": "apps/account/project.json",
+          "hash": "12175826801863136822"
+        },
+        {
+          "file": "apps/account/src/main.ts",
+          "hash": "2909173301194006006"
+        },
+        {
+          "file": "apps/account/src/modules/app.controller.ts",
+          "hash": "9005150069945785676"
+        },
+        {
+          "file": "apps/account/src/modules/app.module.ts",
+          "hash": "372848736198577221"
+        },
+        {
+          "file": "apps/account/src/modules/app.service.ts",
+          "hash": "5816871488321192110"
+        },
+        {
+          "file": "apps/account/tsconfig.app.json",
+          "hash": "18146536384686769023"
+        },
+        {
+          "file": "apps/account/tsconfig.json",
+          "hash": "3490524966360018312"
+        },
+        {
+          "file": "apps/account/tsconfig.spec.json",
+          "hash": "11550347367511341917"
+        },
+        {
+          "file": "apps/account/webpack.config.js",
+          "hash": "10619490397189790225"
+        }
+      ],
+      "decorators": [
+        {
+          "file": "libs/decorators/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/decorators/README.md",
+          "hash": "14944214903945773080"
+        },
+        {
+          "file": "libs/decorators/jest.config.ts",
+          "hash": "7235183001623453826"
+        },
+        {
+          "file": "libs/decorators/package.json",
+          "hash": "61301262025959227"
+        },
+        {
+          "file": "libs/decorators/project.json",
+          "hash": "4567304645754406804"
+        },
+        {
+          "file": "libs/decorators/src/custom-body-parser.decorator.ts",
+          "hash": "13996983866003564937"
+        },
+        {
+          "file": "libs/decorators/src/index.ts",
+          "hash": "8075674396839872674"
+        },
+        {
+          "file": "libs/decorators/tsconfig.json",
+          "hash": "5840880287502376438"
+        },
+        {
+          "file": "libs/decorators/tsconfig.lib.json",
+          "hash": "3632393694954060084"
+        },
+        {
+          "file": "libs/decorators/tsconfig.spec.json",
+          "hash": "11550347367511341917"
+        }
+      ],
+      "core": [
+        {
+          "file": "libs/core/.babelrc",
+          "hash": "14637968239574891430"
+        },
+        {
+          "file": "libs/core/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/core/README.md",
+          "hash": "13938216596219148558"
+        },
+        {
+          "file": "libs/core/jest.config.ts",
+          "hash": "13721124208312869798"
+        },
+        {
+          "file": "libs/core/package.json",
+          "hash": "8626577783478215311"
+        },
+        {
+          "file": "libs/core/project.json",
+          "hash": "14025090085161273178"
+        },
+        {
+          "file": "libs/core/src/common/index.ts",
+          "hash": "952793510199018921"
+        },
+        {
+          "file": "libs/core/src/common/type-check.ts",
+          "hash": "1744821950780389776"
+        },
+        {
+          "file": "libs/core/src/index.ts",
+          "hash": "11501632384636438394"
+        },
+        {
+          "file": "libs/core/src/interfaces/base-request.dto.ts",
+          "hash": "9503292603644994718"
+        },
+        {
+          "file": "libs/core/src/interfaces/base-response.dto.ts",
+          "hash": "13571134215758552088"
+        },
+        {
+          "file": "libs/core/src/interfaces/index.ts",
+          "hash": "13727477185110411796"
+        },
+        {
+          "file": "libs/core/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/core/tsconfig.lib.json",
+          "hash": "8188472110264778699"
+        },
+        {
+          "file": "libs/core/tsconfig.spec.json",
+          "hash": "6514620907549802163"
+        }
+      ],
+      "config": [
+        {
+          "file": "libs/config/.babelrc",
+          "hash": "14637968239574891430"
+        },
+        {
+          "file": "libs/config/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/config/README.md",
+          "hash": "14584286102621135528"
+        },
+        {
+          "file": "libs/config/jest.config.ts",
+          "hash": "5744584201959928243"
+        },
+        {
+          "file": "libs/config/project.json",
+          "hash": "2218788124345964472"
+        },
+        {
+          "file": "libs/config/src/index.ts",
+          "hash": "10803600479084956171"
+        },
+        {
+          "file": "libs/config/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/config/tsconfig.lib.json",
+          "hash": "8188472110264778699"
+        },
+        {
+          "file": "libs/config/tsconfig.spec.json",
+          "hash": "6514620907549802163"
+        }
+      ]
+    }
+  },
+  "externalNodesHash": "13263239899204709639"
+}
