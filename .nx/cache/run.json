@@ -1,0 +1,21 @@
+{
+  "run": {
+    "command": "nx run account:build --skip-nx-cache",
+    "startTime": "2025-12-07T20:51:38.979Z",
+    "endTime": "2025-12-07T20:51:40.535Z",
+    "inner": false
+  },
+  "tasks": [
+    {
+      "taskId": "account:build:production",
+      "target": "build",
+      "projectName": "account",
+      "hash": "6034246246038192364",
+      "startTime": "2025-12-07T20:51:39.014Z",
+      "endTime": "2025-12-07T20:51:40.532Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    }
+  ]
+}

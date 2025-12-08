@@ -1,0 +1,44 @@
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 6.47 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/main.ts[39m[22m [1m[32m[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m
+[1m[31m      TS5110: Option 'module' must be set to 'Node16' when option 'moduleResolution' is set to 'Node16'.[39m[22m
+
+[1m[31mERROR[39m[22m in [1m/Users/eren/Desktop/Project/gamification-api/apps/account/tsconfig.app.json[39m[22m
+[1m./src/main.ts[39m[22m [1m[32m/Users/eren/Desktop/Project/gamification-api/apps/account/tsconfig.app.json[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m
+[1m[31m      TS5110: Option 'module' must be set to 'Node16' when option 'moduleResolution' is set to 'Node16'.[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/modules/app.controller.ts[39m[22m [1m[32m[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m
+[1m[31m      TS5110: Option 'module' must be set to 'Node16' when option 'moduleResolution' is set to 'Node16'.[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/modules/app.module.ts[39m[22m [1m[32m[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m
+[1m[31m      TS5110: Option 'module' must be set to 'Node16' when option 'moduleResolution' is set to 'Node16'.[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/modules/app.service.ts[39m[22m [1m[32m[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m
+[1m[31m      TS5110: Option 'module' must be set to 'Node16' when option 'moduleResolution' is set to 'Node16'.[39m[22m
+
+[1m[31mERROR[39m[22m in [1m../../libs/config/src/index.ts[39m[22m [1m[32m[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m
+[1m[31m      TS5110: Option 'module' must be set to 'Node16' when option 'moduleResolution' is set to 'Node16'.[39m[22m
+
+[1m[31mERROR[39m[22m in [1m../../libs/modules/src/index.ts[39m[22m [1m[32m[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m
+[1m[31m      TS5110: Option 'module' must be set to 'Node16' when option 'moduleResolution' is set to 'Node16'.[39m[22m
+
+[1m[31mERROR[39m[22m in [1m../../libs/modules/src/lib/cache.module.ts[39m[22m [1m[32m[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m
+[1m[31m      TS5110: Option 'module' must be set to 'Node16' when option 'moduleResolution' is set to 'Node16'.[39m[22m
+
+[1m[31mERROR[39m[22m in [1m../../libs/modules/src/lib/config.module.ts[39m[22m [1m[32m[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m
+[1m[31m      TS5110: Option 'module' must be set to 'Node16' when option 'moduleResolution' is set to 'Node16'.[39m[22m
+
+[1m[31mERROR[39m[22m in [1m../../libs/modules/src/lib/mongo.module.ts[39m[22m [1m[32m[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m
+[1m[31m      TS5110: Option 'module' must be set to 'Node16' when option 'moduleResolution' is set to 'Node16'.[39m[22m
+
+webpack compiled with [1m[31m10 errors[39m[22m (4281b59fd288c882)
